@@ -1,0 +1,50 @@
+[
+    {
+        "log_id": "user20241227191700",
+        "username": "user",
+        "date": "2024-12-27",
+        "time": "19:17:00",
+        "diary": "Lorem ipsum odor amet, consectetuer adipiscing elit. Convallis rhoncus aenean morbi nibh torquent tempor tristique orci. Vitae malesuada quisque; vivamus etiam id a. Fusce eros class dapibus risus pharetra dapibus. Mus sollicitudin euismod nisl hendrerit rhoncus risus. Nisi dis pretium vestibulum quisque fames lectus neque aenean. Suspendisse iaculis facilisis dis eleifend nascetur sem porttitor dis volutpat. Sem mauris curabitur sollicitudin phasellus accumsan ante fusce? Eu nec etiam morbi commodo, vitae placerat velit dapibus!",
+        "categories": [
+            "work",
+            "personal",
+            "exercise"
+        ],
+        "date_created": "2024-12-27 19:17:00",
+        "date_modified": "2024-12-28 01:27:41"
+    },
+    {
+        "log_id": "user20241228174900",
+        "username": "user",
+        "date": "2024-12-28",
+        "time": "17:49:00",
+        "diary": "asdf. \r\n\r\n\r\ngfbgf\r\nbdfgs",
+        "categories": [
+            "personal"
+        ],
+        "date_created": "2024-12-28 17:49:00",
+        "date_modified": "2026-04-21 19:49:33"
+    },
+    {
+        "log_id": "user20250318191300",
+        "username": "user",
+        "date": "2025-03-18",
+        "time": "19:13:00",
+        "diary": "asdasdf\r\nadfv\r\ndfv\r\n\r\nadf",
+        "categories": [
+            "personal"
+        ],
+        "date_created": "2025-03-18 19:13:00",
+        "date_modified": "2026-04-21 19:48:05"
+    },
+    {
+        "log_id": "user20260416144800",
+        "username": "user",
+        "date": "2026-04-16",
+        "time": "14:48:00",
+        "diary": "zxcv",
+        "categories": [],
+        "date_created": "2026-04-16 14:48:00",
+        "date_modified": "2026-04-16 14:48:00"
+    }
+]

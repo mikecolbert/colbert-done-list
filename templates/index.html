@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .diary {
+        width: 50%;
+      }
+      .tag-exercise {
+        background-color: #d4edda; /* Light green */
+        color: #155724; /* Dark green */
+        border: 1px solid #155724;
+        padding: 0.5em 0.5em;
+      }
+      .tag-work {
+        background-color: #f8d7da; /* Light red */
+        color: #721c24; /* Dark red */
+        border: 1px solid #721c24;
+        padding: 0.5em 0.5em;
+      }
+      .tag-personal {
+        background-color: #d1ecf1; /* Light blue */
+        color: #0c5460; /* Dark blue */
+        border: 1px solid #0c5460;
+        padding: 0.5em 0.5em;
+      }
+    </style>
+    <title>Diary Entries</title>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1>Diary Entries</h1>
+      <a href="/new-log" class="btn btn-primary mb-3">New Entry</a>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Diary</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in entries %}
+          <tr>
+            <td>{{ entry.display_date }}</td>
+            <td>{{ entry.display_day }}</td>
+            <td class="diary">{{ entry.diary }}</td>
+            <td>
+              {% for category in entry.categories %}
+              <span class="badge rounded-pill tag-{{ category|lower }}"
+                >{{ category }}</span
+              >
+              {% endfor %}
+            </td>
+            <td>
+              <a
+                href="/edit-record/{{ entry.log_id }}"
+                class="btn btn-warning btn-sm"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></a>
+              <form
+                action="/delete-entry/{{ entry.log_id }}"
+                method="post"
+                style="display: inline"
+              >
+                <button class="btn btn-danger btn-sm">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const params = new URLSearchParams(window.location.search);
+        if (!params.get("timezone")) {
+          params.set("timezone", timezone);
+          window.location.search = params.toString();
+        }
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/2c695035ff.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
